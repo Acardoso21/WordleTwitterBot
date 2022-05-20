@@ -110,7 +110,7 @@ class Analize:
         bar_chart.add('Green Letters',  [data[0][0], data[1][0], data[2][0], data[3][0], data[4][0], data[5][0],data[6][0]])
         bar_chart.add('Yellow Letters', [data[0][1], data[1][1], data[2][1], data[3][1], data[4][1], data[5][1],data[6][1]])
         bar_chart.add('Grey Letters',   [data[0][2], data[1][2], data[2][2], data[3][2], data[4][2], data[5][2],data[6][2]])
-        fileSvg = f'W:\CODE\python\FinalProjectContinued{str(Filename)}.svg'
+        fileSvg = f'W:\CODE\python\FinalProjectContinued\WordleTwitterBot/{str(Filename)}.svg'
         bar_chart.render_to_file(fileSvg)
 
     def __str__(self):

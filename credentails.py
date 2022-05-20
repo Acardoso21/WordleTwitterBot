@@ -23,7 +23,7 @@ class Credentails:
                        consumer_secret=self.API_secret_key,
                        access_token=self.Access_Token,
                        access_token_secret=self.Access_Token_Secret)
-        self.WordleN = (open("FinalProjectContinued\WordleNumber.txt", "r")).read()
+        self.WordleN = (open("WordleNumber.txt", "r")).read()
         self.Analyze = Analize(self.tweets, (['🟩', '🟨', '⬛', '⬜']), self.currentDate,self.WordleN)
 
 
@@ -151,14 +151,14 @@ class Credentails:
         except:
             print("Record Failed to Save")
         try:
-            SRecord = open('FinalProjectContinued\SolverRecord.txt', 'a' )
+            SRecord = open('SolverRecord.txt', 'a' )
             SRecord.write(SolverR+' \n')
             SRecord.close
             print("Solver Record Saved")
         except:
             print("Solver Record Failed to Save")
         try:
-            TRecord = open('FinalProjectContinued\TwitterRecord.txt', 'a')
+            TRecord = open('TwitterRecord.txt', 'a')
             TRecord.write(TwitterR+' \n')
             TRecord.close
             print("Solver Record Saved")
