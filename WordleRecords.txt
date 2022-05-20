@@ -1,0 +1,84 @@
+	2022-04-26  Wordle 311
+Twitter Results(3.777155655095185, [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+Computer Solver Results5
+
+	2022-04-26  Wordle 311
+Twitter Results(3.777155655095185, [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+Computer Solver Results5
+
+	2022-04-26  Wordle 311
+Twitter Results(3.777155655095185, [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+Computer Solver Results5
+
+	2022-04-26  Wordle 311
+Twitter Results3.769
+Computer Solver Results5
+
+	2022-05-01  Wordle 316
+Twitter Results4.801
+Computer Solver Results4
+
+	2022-05-01  Wordle 316
+Twitter Results4.801
+Computer Solver Results4
+
+	2022-05-01  Wordle 316
+Twitter Results4.801
+Computer Solver Results4
+
+	2022-05-01  Wordle 316
+Twitter Results4.801
+Computer Solver Results4
+
+	2022-05-06  Wordle 321
+Twitter Results4.251
+Computer Solver Results4
+
+	2022-05-08  Wordle 322
+Twitter Results4.087
+Computer Solver Results4
+
+	2022-05-09  Wordle 323
+Twitter Results4.55
+Computer Solver Results
+
+	2022-05-09  Wordle 324
+Twitter Results3.772
+Computer Solver Results4
+
+	2022-05-10  Wordle 325
+Twitter Results4.431
+Computer Solver Results5
+
+	2022-05-11  Wordle 326
+Twitter Results4.046
+Computer Solver Results4
+
+	2022-05-12  Wordle 327
+Twitter Results4.369
+Computer Solver Results3
+
+	2022-05-13  Wordle 328
+Twitter Results3.952
+Computer Solver Results4
+
+	2022-05-14  Wordle 329
+Twitter Results3.86
+Computer Solver Results4
+
+	2022-05-15  Wordle 330
+Twitter Results4.404
+Computer Solver Results6
+
+	2022-05-16  Wordle 331
+Twitter Results4.48
+Computer Solver Results4
+
+	2022-05-17  Wordle 332
+Twitter Results4.194
+Computer Solver Results5
+
+	2022-05-19  Wordle 333
+Twitter Results3.714
+Computer Solver Results
+
