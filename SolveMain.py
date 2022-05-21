@@ -4,7 +4,7 @@ import pyautogui
 import time
 class Solve:
     def __init__(self):
-        self.words = (open("W:\CODE\python\EECE\FinalProject\WordleWords.txt", "r").read()).split(',')
+        self.words = (open("WordleWords.txt", "r").read()).split(',')
         self.a1 = wordleSolver(self.words)
         self.guesses = []
         self.greenL = []

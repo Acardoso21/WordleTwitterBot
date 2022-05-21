@@ -141,7 +141,7 @@ class Credentails:
 
     def SaveContent(self,SolverR:str,TwitterR:str):
         try:
-            f = open('FinalProjectContinued\WordleRecords.txt', 'a')
+            f = open('WordleRecords.txt', 'a')
             f.write('\t' + str(self.currentDate) + '  ' + self.WordleN + '\n' + 
             ('Twitter Results'+ TwitterR) + '\n' + 
             ('Computer Solver Results' + SolverR) + 
@@ -173,7 +173,7 @@ class Credentails:
         n = search[7:10]
         number = int(n) + 1
         try:
-            Wf = open("FinalProjectContinued\WordleNumber.txt", "w")
+            Wf = open("WordleNumber.txt", "w")
             Wf.write('Wordle '+str(number))
             Wf.close
             print("Wordle Number Updated")
