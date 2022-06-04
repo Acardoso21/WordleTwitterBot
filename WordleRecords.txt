@@ -126,3 +126,11 @@ Computer Solver Results
 Twitter Results3.984
 Computer Solver Results3
 
+	2022-06-02  Wordle 347
+Twitter Results4.191
+Computer Solver Results4
+
+	2022-06-03  Wordle 348
+Twitter Results4.343
+Computer Solver Results3
+
