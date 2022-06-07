@@ -43,9 +43,3 @@ if posted:
             a1.GraphData()
     a1.UpdateWordleNumber()
 print("Program Done")
-
-
-
-
-
-

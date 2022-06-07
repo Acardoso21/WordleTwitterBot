@@ -142,3 +142,7 @@ Computer Solver Results3
 Twitter Results4.102
 Computer Solver Results4
 
+	2022-06-06  Wordle 351
+Twitter Results3.896
+Computer Solver Results4
+
