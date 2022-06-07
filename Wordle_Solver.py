@@ -49,12 +49,13 @@ class wordleSolver:
             out2 = []
             for i in range(0,len(self.wordpool)):
                 c=0
-                for x in range(0,5):
-                    for j in range(0,len(self.yellowLetters)):
+                for j in range(0,len(self.yellowLetters)):
+                    for x in range(0,5):
                         if self.yellowLocations[j] == x:
                             c=c
                         elif self.wordpool[i][x] == self.yellowLetters[j]:
                             c=c+1
+                            break
                 if c >= len(self.yellowLetters):
                     out2.append(self.wordpool[i])
             self.wordpool = out2[:]

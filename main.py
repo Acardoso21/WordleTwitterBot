@@ -7,6 +7,7 @@ a1.search(term)
 a1.analize()
 TwitterR = a1.getAverage()
 TwitterDetails = a1.detailStats()
+TwitterR = ""
 details = ""
 box = ''
 ComputerR = ""
