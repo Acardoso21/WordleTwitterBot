@@ -25,7 +25,7 @@ if inp == 'y':
     ComputerR = a1.CompareToRobot()
     outPut = (f'Twitter users took {TwitterR} guesses on average  \n' + 
             details +
-            f'My wordle solver took {ComputerR} guesses \n')
+            f'My wordle solver took {ComputerR} guesses \n') 
 else:
     outPut = (f'Todays average number of wordle guesses from twitter users is {TwitterR} \n' + details)
 posted = a1.PostResults(outPut + '#Wordle #WordleStats')
