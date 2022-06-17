@@ -55,7 +55,7 @@ class wordleSolver:
                             c=c
                         elif self.wordpool[i][x] == self.yellowLetters[j]:
                             c=c+1
-                            break
+                            break #fix this
                 if c >= len(self.yellowLetters):
                     out2.append(self.wordpool[i])
             self.wordpool = out2[:]
