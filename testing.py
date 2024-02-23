@@ -1,3 +1,5 @@
-ar = [1,2,3,4,5,6,7,8,9,10]
-ar.pop(3)
-print(ar)
+from SolveMain import Solve
+
+
+solving = Solve()
+print(solving.ComputerGuesses())        

@@ -22,26 +22,45 @@ class Solve:
 
     def ComputerGuesses(self):
         x, y = pyautogui.size()
-        pyautogui.moveTo(10, (y-10), 0.1)
+        pyautogui.moveTo(10, (y-10), 0.1) #windows button bottom left corner
         pyautogui.click()
         time.sleep(1)
-        pyautogui.typewrite("Google Chrome",0.1)
+        pyautogui.typewrite("Google Chrome",0.1) #search for chrome in windows
         time.sleep(2)
         pyautogui.hotkey("enter")
         time.sleep(1)
-        pyautogui.moveTo(x/2, ((y*2)/3), 0.1)
+        pyautogui.moveTo(x/2, ((y*2)/3), 0.1) #click on new window
         pyautogui.click()
-        pyautogui.hotkey("ctrl", "shift", "n")
+        pyautogui.hotkey("ctrl", "shift", "n") #open inconito tab
         time.sleep(1)
-        pyautogui.typewrite("https://www.nytimes.com/games/wordle/index.html")
+        pyautogui.typewrite("https://www.nytimes.com/games/wordle/index.html") #enter site destination
         pyautogui.hotkey("enter")
-
         time.sleep(1)
-        pyautogui.hotkey("f11")
-        pyautogui.moveTo(1180, 297, 0.1)
+        pyautogui.moveTo(x/3, ((y*2)/3), 0.1) #click on new window
         pyautogui.click()
-        pyautogui.moveTo(800, 270,0.1)
-        pyautogui.click()
+        time.sleep(1)
+        pyautogui.hotkey("tab") #open inconito tab
+        time.sleep(0.5)
+        pyautogui.hotkey("tab") #open inconito tab
+        time.sleep(0.5)
+        pyautogui.hotkey("tab") #open inconito tab
+        time.sleep(0.5)
+        pyautogui.hotkey("enter") #open inconito tab
+        time.sleep(1)
+        time.sleep(0.5)
+        pyautogui.hotkey("tab") #open inconito tab
+        time.sleep(0.5)
+        pyautogui.hotkey("tab") #open inconito tab
+        time.sleep(0.5)
+        pyautogui.hotkey("tab") #open inconito tab
+        time.sleep(0.5)
+        pyautogui.hotkey("enter") #open inconito tab
+        time.sleep(1)
+        # pyautogui.hotkey("f11")
+        # pyautogui.moveTo(1180, 297, 0.1)
+        # pyautogui.click()
+        # pyautogui.moveTo(800, 270,0.1)
+        # pyautogui.click()
         self.a1.SortWords()
         Ly = 270
         T = 2

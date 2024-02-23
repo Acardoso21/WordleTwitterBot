@@ -1,4 +1,4 @@
-import tweepy
+import tweety
 from datetime import datetime, timedelta
 from analize import Analize
 from SolveMain import Solve
