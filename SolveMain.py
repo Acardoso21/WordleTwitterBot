@@ -14,8 +14,8 @@ class Solve:
         self.locationG = []
         self.saveY = [[],[],[],[],[],[]]
         self.saveG = [[],[],[],[],[],[]]
-        self.yellow = (183, 169, 62)
-        self.green = (30, 155, 82)  
+        self.yellow = (181, 159, 59)
+        self.green = (83, 141, 78)  
         self.black = (58, 58, 60)
         self.colors = [[],[],[],[],[],[]]
         self.solved = False
@@ -62,8 +62,14 @@ class Solve:
         # pyautogui.moveTo(800, 270,0.1)
         # pyautogui.click()
         self.a1.SortWords()
-        Ly = 270
-        T = 2
+
+        # Ly = 270
+        Ly=580
+        Lx = 800
+        T = 4
+
+        # pyautogui.moveTo(Lx, Ly,0.1)
+        # ImageGrab.grab().load()
         for j in range(0,6):
 
             wordpool = self.a1.getWords()[:]
@@ -85,7 +91,9 @@ class Solve:
             for i in range (0,5):
                 pyautogui.moveTo(Lx, Ly,0.1)
                 pixel1=ImageGrab.grab().load()
+                print("pix  ", pixel1)
                 pxcolor1=pixel1[pyautogui.position()]
+                print("color ", pxcolor1)
                 if pxcolor1 == self.yellow:
                     self.yellowL.append(self.guesses[j][i])
                     self.locationY.append(i)
@@ -101,8 +109,11 @@ class Solve:
 
             #calculate the next word here
             self.a1.addGreenLetters(self.greenL, self.locationG)
+            print(self.greenL)
             self.a1.addYellowLetter(self.yellowL,self.locationY)
+            print(self.yellowL)
             self.a1.addBlackLetter(self.blackL)
+            print(self.blackL)
             self.a1.CalculateWords()
             self.a1.SortWords()
             self.saveG[j] = self.greenL[:]
