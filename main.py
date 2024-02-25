@@ -1,5 +1,8 @@
 from credentails import Credentails
 import time
+
+#THIS MAIN FILE WAS MADE IN 2022 FOR A COLLEGE PROJECT AND IS NO LONGER FUNCTIONAL
+
 userName = 'WordleGuessAve'
 a1 = Credentails()
 term = str(a1.WordleNumber())

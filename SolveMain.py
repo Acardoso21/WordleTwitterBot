@@ -102,6 +102,9 @@ class Solve:
                     self.locationG.append(i)
                 elif pxcolor1 == self.black:
                     self.blackL.append(self.guesses[j][i])
+                elif pxcolor1 == (18,18,19):
+                    print("We believe the wordle has been solved")
+                    return len(self.guesses)
                 else:
                     self.blackL.append(self.guesses[j][i])
                 Lx = Lx+67
@@ -119,12 +122,12 @@ class Solve:
             self.saveG[j] = self.greenL[:]
             self.saveY[j] = self.yellowL[:]
             time.sleep(2)
-            pixel1=ImageGrab.grab().load()
-            pxc=pixel1[1010,665]
-            if pxc == self.green:
-                print('Wordle Solved')
-                self.solved = True
-                break
+            # pixel1=ImageGrab.grab().load()
+            # pxc=pixel1[1010,665]
+            # if pxc == self.green:
+            #     print('Wordle Solved')
+            #     self.solved = True
+            #     break
             self.yellowL.clear
             self.locationY.clear
             self.greenL.clear
