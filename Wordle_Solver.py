@@ -10,6 +10,7 @@ class wordleSolver:
         self.yellowLocations = []
         self.greenLetters = []
         self.greenLocations = []
+        self.wordlength = len(wordpool[0])
 
     def addBlackLetter(self, letters):
         temp = []
@@ -37,7 +38,7 @@ class wordleSolver:
         out = []
         for i in range(0,len(self.wordpool)):
             c = 0
-            for x in range(0,5):
+            for x in range(0,self.wordlength):
                 for j in range(0,len(self.blackLetters)):
                     if self.wordpool[i][x] == self.blackLetters[j]:
                         c=c+1
@@ -50,7 +51,7 @@ class wordleSolver:
             for i in range(0,len(self.wordpool)):
                 c=0
                 for j in range(0,len(self.yellowLetters)):
-                    for x in range(0,5):
+                    for x in range(0,self.wordlength):
                         if self.yellowLocations[j] == x:
                             c=c
                         elif self.wordpool[i][x] == self.yellowLetters[j]:
