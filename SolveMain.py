@@ -108,7 +108,7 @@ class Solve:
                 else:
                     self.blackL.append(self.guesses[j][i])
                 Lx = Lx+67
-            Ly = Ly + 67
+            Ly = Ly + 60
 
             #calculate the next word here
             self.a1.addGreenLetters(self.greenL, self.locationG)
