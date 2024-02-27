@@ -1,3 +1,5 @@
+#THIS FILE IS FOR KEYBOARD AND MOUSE CONTROL TO INTERACT WITH WORDLE
+
 from Wordle_Solver import wordleSolver
 from PIL import ImageGrab
 import pyautogui

@@ -1,4 +1,4 @@
-from SolveMain import Solve
+from WordleTwitterBot.pyautogui_SolveMain import Solve
 
 
 solving = Solve()

@@ -1,7 +1,7 @@
 import tweety
 from datetime import datetime, timedelta
 from analize import Analize
-from SolveMain import Solve
+from WordleTwitterBot.pyautogui_SolveMain import Solve
 
 class Credentails:
     def __init__(self):
