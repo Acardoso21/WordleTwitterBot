@@ -6,10 +6,14 @@ class wordleSolver:
         self.wordpool = wordpool
         self.allwords = wordpool
         self.blackLetters = []
-        self.yellowLetters = []
-        self.yellowLocations = []
-        self.greenLetters = []
-        self.greenLocations = []
+        self.yellow_info = []
+        self.green_info = []
+        self.NextGuess = ""
+
+    def addAllletters(self, bletters, yletters, gletters):
+        self.addBlackLetter(bletters)
+        self.addYellowLetter(yletters['letters'], yletters['locations'])
+        self.addGreenLetters(gletters['letters'], gletters['locations'])
 
     def addBlackLetter(self, letters):
         temp = []
@@ -21,65 +25,61 @@ class wordleSolver:
     
     def addYellowLetter(self, letters, locations):
         temp = []
-        temp2 = []
         for x in range(0, len(letters)):
             if letters[x] not in self.greenLetters:
-                temp.append(letters[x])
-                temp2.append(locations[x])
-        self.yellowLetters += temp
-        self.yellowLocations += temp2
-                    
+                temp.append({'letter': letters[x], 'location': locations[x]})
+        self.yellow_info += temp
+
     def addGreenLetters(self, letters, locations):
-        self.greenLetters += letters
-        self.greenLocations += locations
+        self.green_info += [{'letter': letters[i], 'location': locations[i]} for i in range(len(letters))]
 
-def CalculateWords(self):
-    # Step 1: Remove words containing black letters
-    out = []
-    for i in range(0, len(self.wordpool)):
-        c = 0
-        for x in range(0, 5):
-            for j in range(0, len(self.blackLetters)):
-                if self.wordpool[i][x] == self.blackLetters[j]:
-                    c = c + 1
-        if c == 0:
-            out.append(self.wordpool[i])
-    self.wordpool = out[:]  # Update wordpool without words containing black letters
-
-    # Step 2: Remove words not matching yellow letters and locations
-    if len(self.yellowLetters) >= 1:
-        out2 = []
+            
+    def CalculateWords(self):
+        # Step 1: Remove words containing black letters
+        out = []
         for i in range(0, len(self.wordpool)):
             c = 0
-            for j in range(0, len(self.yellowLetters)):
-                for x in range(0, 5):
-                    # Check if the yellow letter is at the correct location
-                    if self.yellowLocations[j] == x:
+            for x in range(0, 5):
+                for letter_info in self.blackLetters:
+                    if self.wordpool[i][x] == letter_info['letter']:
+                        c += 1
+            if c == 0:
+                out.append(self.wordpool[i])
+        self.wordpool = out[:]  # Update wordpool without words containing black letters
+
+        # Step 2: Remove words not matching yellow letters and locations
+        if len(self.yellow_info) >= 1:
+            out2 = []
+            for i in range(0, len(self.wordpool)):
+                c = 0
+                for letter_info in self.yellow_info:
+                    for x in range(0, 5):
+                        # Check if the yellow letter is at the correct location
+                        if letter_info['location'] == x and self.wordpool[i][x] == letter_info['letter']:
+                            c += 1
+                        # Check if the word contains the yellow letter at any other location
+                        elif letter_info['location'] != x and self.wordpool[i][x] == letter_info['letter']:
+                            c += 1
+                # If the count of matching yellow letters is equal to or greater than the expected count
+                if c >= len(self.yellow_info):
+                    out2.append(self.wordpool[i])
+            self.wordpool = out2[:]  # Update wordpool without words not matching yellow letters and locations
+
+        # Step 3: Remove words not matching green letters and locations
+        if len(self.green_info) > 0:
+            out3 = []
+            for i in range(0, len(self.wordpool)):
+                c = 0
+                for letter_info in self.green_info:
+                    # Check if the green letter is at the correct location
+                    if self.wordpool[i][letter_info['location']] == letter_info['letter']:
+                        c += 1
+                    else:
                         c = c
-                    # Check if the word contains the yellow letter at any other location
-                    elif self.wordpool[i][x] == self.yellowLetters[j]:
-                        c = c + 1
-            # If the count of matching yellow letters is equal to or greater than the expected count
-            if c >= len(self.yellowLetters):
-                out2.append(self.wordpool[i])
-        self.wordpool = out2[:]  # Update wordpool without words not matching yellow letters and locations
-
-    # Step 3: Remove words not matching green letters and locations
-    if len(self.greenLetters) > 0:
-        out3 = []
-        for i in range(0, len(self.wordpool)):
-            c = 0
-            for j in range(0, len(self.greenLetters)):
-                # Check if the green letter is at the correct location
-                if self.wordpool[i][self.greenLocations[j]] == self.greenLetters[j]:
-                    c = c + 1
-                else:
-                    c = c
-            # If the count of matching green letters is greater than the expected count minus one
-            if c > len(self.greenLetters) - 1:
-                out3.append(self.wordpool[i])
-        self.wordpool = out3[:]  # Update wordpool without words not matching green letters and locations
-
+                # If the count of matching green letters is greater than the expected count minus one
+                if c > len(self.green_info) - 1:
+                    out3.append(self.wordpool[i])
+            self.wordpool = out3[:]  # Update wordpool without words not matching green letters and locations
 
 
     def getWords(self):
@@ -170,12 +170,15 @@ def CalculateWords(self):
         # Update the wordpool attribute with the sorted words
 
         self.wordpool = words[:]
-        return words
+        self.NextGuess = self.wordpool[0]
+        # return words
 
+    def guess(self):
+        return self.NextGuess
         
 
     def __str__(self):
-        return f'Green Letters: {self.greenLetters}, Yellow Letters: {self.yellowLetters}, Black Letters: {self.blackLetters}'
+        return f'Green Letters: {self.green_info}, Yellow Letters: {self.yellow_info}, Black Letters: {self.blackLetters}'
 
 
 
