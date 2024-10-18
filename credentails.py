@@ -1,31 +1,36 @@
-import tweety
+import tweepy
+import os
 from datetime import datetime, timedelta
 from analize import Analize
-from WordleTwitterBot.pyautogui_SolveMain import Solve
+from pyautogui_SolveMain import Solve
 
 class Credentails:
     def __init__(self):
         self.tweets = []
         self.data = []
         self.color = []
-        self.ColorDistrbution = []
-        self.Access_Token = '1515321140285100039-kTTl55xwAuiV11vuhAB9kCXdyPUQZJ'
-        self.Access_Token_Secret = 'VOsKON0R8x8K881oXIj2LbdwuOBEh8EZUEJ9YcaezSnbz'
-        self.API_key = 'c4N5TK4avOJNdKjrE9ycHYtPa'
-        self.API_secret_key = 'Laf3Xzna0srSUJfo0U2LegkYxPMDqPTb4wWxMsYhWLVafOsgis'
-        self.Bearer_Token = 'AAAAAAAAAAAAAAAAAAAAAE9hbgEAAAAACKJ05Pq5PKX0Q%2BlW%2BwGxlFG5gbw%3Dcq21QcxkhC8FKLBvNIdNsCF5wFgukrtMM3srqWIWQqmhEuikCk'
-        self.Client_ID = 'b1NTaUFpbHNDMkV0SGV3T24zV006MTpjaQ'
-        self.Client_Secret = 'T_dwJDNcRRXFO-9fqEX51C-xxbGUUTaPHRLBtnFQCyDGVMtCn6'
+        self.ColorDistribution = []
+        
+        # Fetch credentials securely from environment variables
+        self.Access_Token = os.getenv('TWITTER_ACCESS_TOKEN')
+        self.Access_Token_Secret = os.getenv('TWITTER_ACCESS_TOKEN_SECRET')
+        self.API_key = os.getenv('TWITTER_API_KEY')
+        self.API_secret_key = os.getenv('TWITTER_API_KEY_SECRET')
+        self.Bearer_Token = os.getenv('TWITTER_BEARER_TOKEN')
+        
         self.currentDate = datetime.today().strftime('%Y-%m-%d')
+        
+        # Set up Tweepy Client using the environment credentials
         self.client = tweepy.Client(
-                       bearer_token=self.Bearer_Token,
-                       consumer_key=self.API_key,
-                       consumer_secret=self.API_secret_key,
-                       access_token=self.Access_Token,
-                       access_token_secret=self.Access_Token_Secret)
-        self.WordleN = (open("WordleNumber.txt", "r")).read()
-        self.Analyze = Analize(self.tweets, (['🟩', '🟨', '⬛', '⬜']), self.currentDate,self.WordleN)
-
+            bearer_token=self.Bearer_Token,
+            consumer_key=self.API_key,
+            consumer_secret=self.API_secret_key,
+            access_token=self.Access_Token,
+            access_token_secret=self.Access_Token_Secret
+        )
+        
+        # Assuming Wordle number is stored locally
+        self.WordleN = open("WordleNumber.txt", "r").read()
 
     def search(self, term:str):
         query = term
