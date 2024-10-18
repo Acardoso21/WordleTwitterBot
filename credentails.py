@@ -6,24 +6,29 @@ from analize import Analize
 
 class Credentails:
     def __init__(self):
-        self.tweets = []
-        self.data = []
-        self.color = []
-        self.ColorDistribution = []
         # Fetch credentials securely from environment variables
         self.Access_Token = os.getenv('TWITTER_ACCESS_TOKEN')
         self.Access_Token_Secret = os.getenv('TWITTER_ACCESS_TOKEN_SECRET')
         self.API_key = os.getenv('TWITTER_API_KEY')
-        self.API_secret_key = os.getenv('TWITTER_API_KEY_SECRET')
+        self.API_secret_key = os.getenv('TWITTER_API_SECRET')
         self.Bearer_Token = os.getenv('TWITTER_BEARER_TOKEN')  
+        
+        # Verify if all required credentials are provided
+        if not all([self.Access_Token, self.Access_Token_Secret, self.API_key, self.API_secret_key, self.Bearer_Token]):
+            raise Exception("Missing Twitter API credentials. Ensure that all necessary environment variables are set.")
+
         # Set up Tweepy Client using the environment credentials
-        self.client = tweepy.Client(
-            bearer_token=self.Bearer_Token,
-            consumer_key=self.API_key,
-            consumer_secret=self.API_secret_key,
-            access_token=self.Access_Token,
-            access_token_secret=self.Access_Token_Secret
-        )
+        try:
+            self.client = tweepy.Client(
+                bearer_token=self.Bearer_Token,
+                consumer_key=self.API_key,
+                consumer_secret=self.API_secret_key,
+                access_token=self.Access_Token,
+                access_token_secret=self.Access_Token_Secret
+            )
+        except tweepy.TweepyException as e:
+            print(f"Error setting up Tweepy client: {e}")
+        
         # Assuming Wordle number is stored locally
         self.currentDate = datetime.today().strftime('%Y-%m-%d')
         self.WordleN = open("WordleNumber.txt", "r").read()
