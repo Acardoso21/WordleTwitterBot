@@ -2,7 +2,7 @@ import tweepy
 import os
 from datetime import datetime, timedelta
 from analize import Analize
-from pyautogui_SolveMain import Solve
+# from pyautogui_SolveMain import Solve
 
 class Credentails:
     def __init__(self):
