@@ -10,7 +10,7 @@ class Credentails:
         self.Access_Token = os.getenv('TWITTER_ACCESS_TOKEN')
         self.Access_Token_Secret = os.getenv('TWITTER_ACCESS_TOKEN_SECRET')
         self.API_key = os.getenv('TWITTER_API_KEY')
-        self.API_secret_key = os.getenv('TWITTER_API_SECRET')
+        self.API_secret_key = os.getenv('TWITTER_API_KEY_SECRET')
         self.Bearer_Token = os.getenv('TWITTER_BEARER_TOKEN')  
         
         # Verify if all required credentials are provided
@@ -24,8 +24,7 @@ class Credentails:
                 consumer_key=self.API_key,
                 consumer_secret=self.API_secret_key,
                 access_token=self.Access_Token,
-                access_token_secret=self.Access_Token_Secret
-            )
+                access_token_secret=self.Access_Token_Secret)
         except tweepy.TweepyException as e:
             print(f"Error setting up Tweepy client: {e}")
         
