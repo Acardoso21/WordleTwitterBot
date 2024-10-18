@@ -3,4 +3,4 @@ pandas
 datetime
 pygal
 pyautogui
-PIL
+pillow
