@@ -10,16 +10,12 @@ class Credentails:
         self.data = []
         self.color = []
         self.ColorDistribution = []
-        
         # Fetch credentials securely from environment variables
         self.Access_Token = os.getenv('TWITTER_ACCESS_TOKEN')
         self.Access_Token_Secret = os.getenv('TWITTER_ACCESS_TOKEN_SECRET')
         self.API_key = os.getenv('TWITTER_API_KEY')
         self.API_secret_key = os.getenv('TWITTER_API_KEY_SECRET')
-        self.Bearer_Token = os.getenv('TWITTER_BEARER_TOKEN')
-        
-        self.currentDate = datetime.today().strftime('%Y-%m-%d')
-        
+        self.Bearer_Token = os.getenv('TWITTER_BEARER_TOKEN')  
         # Set up Tweepy Client using the environment credentials
         self.client = tweepy.Client(
             bearer_token=self.Bearer_Token,
@@ -28,9 +24,10 @@ class Credentails:
             access_token=self.Access_Token,
             access_token_secret=self.Access_Token_Secret
         )
-        
         # Assuming Wordle number is stored locally
+        self.currentDate = datetime.today().strftime('%Y-%m-%d')
         self.WordleN = open("WordleNumber.txt", "r").read()
+        self.Analyze = Analize(self.tweets, (['🟩', '🟨', '⬛', '⬜']), self.currentDate,self.WordleN)
 
     def search(self, term:str):
         query = term
