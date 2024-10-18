@@ -137,9 +137,9 @@ class Credentails:
         self.Analyze.createGraph(self.ColorDistrbution,self.WordleN)
         print("Graph Created and Saved")
 
-    def CompareToRobot(self):
-        solving = Solve()
-        return solving.ComputerGuesses()
+    # def CompareToRobot(self):
+    #     solving = Solve()
+    #     return solving.ComputerGuesses()
 
     def SaveContent(self,SolverR:str,TwitterR:str):
         try:
