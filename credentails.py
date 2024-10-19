@@ -20,8 +20,8 @@ class Credentails:
             print("TWITTER_API_KEY not found")
         if not self.API_secret_key:
             print("TWITTER_API_KEY_SECRET not found")
-        if not self.Bearer_Token:
-            print("TWITTER_BEARER_TOKEN not found")
+        if self.Bearer_Token:
+            print('please just work -------' + self.Bearer_Token)
         # Verify if all required credentials are provided
         # if not all([self.Access_Token, self.Access_Token_Secret, self.API_key, self.API_secret_key, self.Bearer_Token]):
         #     raise Exception("Missing Twitter API credentials. Ensure that all necessary environment variables are set.")
