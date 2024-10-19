@@ -7,11 +7,11 @@ from analize import Analize
 class Credentails:
     def __init__(self):
         # Fetch credentials securely from environment variables
-        self.Access_Token = os.getenv('TWITTER_ACCESS_TOKEN')
-        self.Access_Token_Secret = os.getenv('TWITTER_ACCESS_TOKEN_SECRET')
-        self.API_key = os.getenv('TWITTER_API_KEY')
-        self.API_secret_key = os.getenv('TWITTER_API_KEY_SECRET')
-        self.Bearer_Token = os.getenv('TWITTER_BEARER_TOKEN')  
+        self.Access_Token = os.environ.get('TWITTER_ACCESS_TOKEN')
+        self.Access_Token_Secret = os.environ.get('TWITTER_ACCESS_TOKEN_SECRET')
+        self.API_key = os.environ.get('TWITTER_API_KEY')
+        self.API_secret_key = os.environ.get('TWITTER_API_KEY_SECRET')
+        self.Bearer_Token = os.environ.get('TWITTER_BEARER_TOKEN')  
         if not self.Access_Token:
             print("TWITTER_ACCESS_TOKEN not found")
         if not self.Access_Token_Secret:
