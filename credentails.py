@@ -6,34 +6,13 @@ from analize import Analize
 
 class Credentails:
     def __init__(self):
-        # Fetch credentials securely from environment variables
-        self.Access_Token = os.environ.get('TWITTER_ACCESS_TOKEN')
-        self.Access_Token_Secret = os.environ.get('TWITTER_ACCESS_TOKEN_SECRET')
-        self.API_key = os.environ.get('TWITTER_API_KEY')
-        self.API_secret_key = os.environ.get('TWITTER_API_KEY_SECRET')
-        self.Bearer_Token = os.environ.get('TWITTER_BEARER_TOKEN')  
-        if not self.Access_Token:
-            print("TWITTER_ACCESS_TOKEN not found")
-        if not self.Access_Token_Secret:
-            print("TWITTER_ACCESS_TOKEN_SECRET not found")
-        if not self.API_key:
-            print("TWITTER_API_KEY not found")
-        if not self.API_secret_key:
-            print("TWITTER_API_KEY_SECRET not found")
-        if self.Bearer_Token:
-            print('please just work -------' + self.Bearer_Token)
-        # Verify if all required credentials are provided
-        # if not all([self.Access_Token, self.Access_Token_Secret, self.API_key, self.API_secret_key, self.Bearer_Token]):
-        #     raise Exception("Missing Twitter API credentials. Ensure that all necessary environment variables are set.")
-
-        # Set up Tweepy Client using the environment credentials
         try:
             self.client = tweepy.Client(
-                bearer_token=os.environ.get('TWITTER_BEARER_TOKEN'),
-                # consumer_key=self.API_key,
-                # consumer_secret=self.API_secret_key,
-                # access_token=self.Access_Token,
-                # access_token_secret=self.Access_Token_Secret
+                bearer_token=os.environ.get('TWITTER_BEARER_TOKEN')  ,
+                consumer_key=os.environ.get('TWITTER_API_KEY'),
+                consumer_secret=os.environ.get('TWITTER_API_KEY_SECRET'),
+                access_token=os.environ.get('TWITTER_ACCESS_TOKEN'),
+                access_token_secret=os.environ.get('TWITTER_ACCESS_TOKEN_SECRET')
                 )
         except tweepy.TweepyException as e:
             print(f"Error setting up Tweepy client: {e}")
