@@ -27,7 +27,7 @@ class Credentails:
         query = term
         enddate = self.currentDate + "T00:00:00Z"
         startdate = datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d') + 'T00:00:00Z'
-        for tweet in tweepy.Paginator(self.client.search_recent_tweets, query=query, start_time=startdate, end_time=enddate, max_results=100).flatten(limit=10000):
+        for tweet in tweepy.Paginator(self.client.search_recent_tweets, query=query, start_time=startdate, end_time=enddate, max_results=1).flatten(limit=1):
             self.tweets.append(tweet)
         print(len(self.tweets)," Tweets Found")
 
