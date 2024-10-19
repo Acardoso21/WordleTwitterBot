@@ -23,8 +23,8 @@ class Credentails:
         if not self.Bearer_Token:
             print("TWITTER_BEARER_TOKEN not found")
         # Verify if all required credentials are provided
-        if not all([self.Access_Token, self.Access_Token_Secret, self.API_key, self.API_secret_key, self.Bearer_Token]):
-            raise Exception("Missing Twitter API credentials. Ensure that all necessary environment variables are set.")
+        # if not all([self.Access_Token, self.Access_Token_Secret, self.API_key, self.API_secret_key, self.Bearer_Token]):
+        #     raise Exception("Missing Twitter API credentials. Ensure that all necessary environment variables are set.")
 
         # Set up Tweepy Client using the environment credentials
         try:
