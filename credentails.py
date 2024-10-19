@@ -36,7 +36,10 @@ class Credentails:
                 access_token_secret=self.Access_Token_Secret)
         except tweepy.TweepyException as e:
             print(f"Error setting up Tweepy client: {e}")
-        
+        self.tweets = []
+        self.data = []
+        self.color = []
+        self.ColorDistribution = []
         # Assuming Wordle number is stored locally
         self.currentDate = datetime.today().strftime('%Y-%m-%d')
         self.WordleN = open("WordleNumber.txt", "r").read()
