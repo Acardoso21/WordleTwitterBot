@@ -29,11 +29,12 @@ class Credentails:
         # Set up Tweepy Client using the environment credentials
         try:
             self.client = tweepy.Client(
-                bearer_token=self.Bearer_Token,
-                consumer_key=self.API_key,
-                consumer_secret=self.API_secret_key,
-                access_token=self.Access_Token,
-                access_token_secret=self.Access_Token_Secret)
+                bearer_token=os.environ.get('TWITTER_BEARER_TOKEN'),
+                # consumer_key=self.API_key,
+                # consumer_secret=self.API_secret_key,
+                # access_token=self.Access_Token,
+                # access_token_secret=self.Access_Token_Secret
+                )
         except tweepy.TweepyException as e:
             print(f"Error setting up Tweepy client: {e}")
         self.tweets = []
