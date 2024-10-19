@@ -8,11 +8,9 @@ class Credentails:
     def __init__(self):
         try:
             self.client = tweepy.Client(
-                bearer_token=os.environ.get('TWITTER_BEARER_TOKEN')  ,
-                consumer_key=os.environ.get('TWITTER_API_KEY'),
-                consumer_secret=os.environ.get('TWITTER_API_KEY_SECRET'),
-                access_token=os.environ.get('TWITTER_ACCESS_TOKEN'),
-                access_token_secret=os.environ.get('TWITTER_ACCESS_TOKEN_SECRET')
+                # bearer_token=os.environ.get('TWITTER_BEARER_TOKEN'),
+                consumer_key=os.environ.get('TWITTER_API_KEY'), consumer_secret=os.environ.get('TWITTER_API_KEY_SECRET'),
+                access_token=os.environ.get('TWITTER_ACCESS_TOKEN'), access_token_secret=os.environ.get('TWITTER_ACCESS_TOKEN_SECRET')
                 )
         except tweepy.TweepyException as e:
             print(f"Error setting up Tweepy client: {e}")
