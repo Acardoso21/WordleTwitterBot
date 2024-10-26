@@ -1,4 +1,4 @@
-name: Twitter API Data Analysis
+name: Twitter API test
 
 on:
   push:
